@@ -10,7 +10,7 @@ def element_length(lst: Iterable[Sequence]) -> List[Tuple[Sequence, int]]:
     for seq in lst:
         """store seq in a variable length"""
         length = len(seq)
-        """ append seq"""
+        """ append length"""
         result.append((seq, length))
         """return seq"""
     return result
