@@ -1,18 +1,18 @@
 #!/usr/bin/env python3
-"""Annotate function’s parameters and /
-return values with the appropriate types"""
-from typing import Iterable, Sequence, List, Tuple
+"""
+    Duck type and iteration
+"""
+from typing import Iterable, Sequence, List, Union, Tuple
 
-"""function’s parameters and return values with the appropriate types"""
 
+def element_length(lst: Iterable[Sequence])\
+        -> List[Tuple[Sequence, int]]:
+    """
+        Args:
+            lst: Sequence of list
 
-def element_length(lst: Iterable[Sequence]) -> List[Tuple[Sequence, int]]:
-    result = []
-    """loop seq in 1st"""
-    for seq in lst:
-        """store seq in a variable length"""
-        length = len(seq)
-        """ append length"""
-        result.append((seq, length))
-        """return seq"""
-    return result
+        Return:
+            List of tuple of sequence of integers
+    """
+
+    return [(i, len(i)) for i in lst]
